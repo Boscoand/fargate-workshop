@@ -5,8 +5,8 @@
     "inferenceAccelerators": [],
     "containerDefinitions": [
         {
-            "name": "ecs-devops-sandbox",
-            "image": "ecs-devops-sandbox-repository:00000",
+            "name": "DefaultContainer",
+            "image": "testing-api-repository:00000",
             "resourceRequirements": null,
             "essential": true,
             "portMappings": [
@@ -22,8 +22,8 @@
     "networkMode": "awsvpc",
     "memory": "512",
     "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::878623218037:role/ecs-devops-sandbox-execution-role",
-    "family": "ecs-devops-sandbox-task-definition",
+    "executionRoleArn": "arn:aws:iam::878623218037:role/testing-api-execution-role",
+    "family": "testing-api-task-definition",
     "taskRoleArn": "",
     "placementConstraints": []
 }
