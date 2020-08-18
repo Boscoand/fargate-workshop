@@ -18,9 +18,9 @@ class InfrastructurePipelineStack extends cdk.Stack {
     const prefixName = 'testing-api'
 
     // Create the ECR Repository
-    const ecrRepository = new ecr.Repository(this, prefixName + "-repository", {
-      repositoryName: prefixName+"-repository"
-    })
+    // const ecrRepository = new ecr.Repository(this, prefixName + "-repository", {
+    //   repositoryName: prefixName+"-repository"
+    // })
 
     const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
       pipelineName: prefixName + '-pipeline',
@@ -33,7 +33,7 @@ class InfrastructurePipelineStack extends cdk.Stack {
         actionName: 'GitHubSource',
         owner: 'Boscoand',
         repo: 'fargate-workshop',
-        oauthToken: '10943e10bd979e0a2c72bd085f93e447218602ef',
+        oauthToken: 'cea09c0e006f8baf5e09c35a397472a2197db9fa',
         output: sourceOutput
     });
 
@@ -54,16 +54,16 @@ class InfrastructurePipelineStack extends cdk.Stack {
 
     // Build
     const buildProject = new codebuild.PipelineProject(this, 'BuildProject', {
-    //     buildSpec: codebuild.BuildSpec.fromSourceFilename('buildspec.yml'),
-        // environment: {
+        buildSpec: codebuild.BuildSpec.fromSourceFilename('buildspec.yml'),
+        environment: {
         //   buildImage: codebuild.LinuxBuildImage.UBUNTU_14_04_NODEJS_10_1_0,
         //   environmentVariables: {
         //     'ARTIFACTS_BUCKET': {
         //         value: pipeline.artifactBucket.bucketName
         //     }
         //   },
-        //   privileged: true
-        // }
+          privileged: true // Enables Docker daemon
+        }
     });
 
     buildProject.addToRolePolicy(new iam.PolicyStatement({
