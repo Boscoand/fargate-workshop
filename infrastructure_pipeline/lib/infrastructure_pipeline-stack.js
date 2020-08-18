@@ -33,7 +33,7 @@ class InfrastructurePipelineStack extends cdk.Stack {
         actionName: 'GitHubSource',
         owner: 'Boscoand',
         repo: 'fargate-workshop',
-        oauthToken: 'cea09c0e006f8baf5e09c35a397472a2197db9fa',
+        oauthToken: 'b362e66e6dde3c8fa888d3854b2751d422b715c7',
         output: sourceOutput
     });
 
