@@ -1,1 +1,4 @@
 infrastructure_pipeline/
+
+node_modules
+npm-debug.log
