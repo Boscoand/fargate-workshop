@@ -6,7 +6,7 @@
     "containerDefinitions": [
         {
             "name": "DefaultContainer",
-            "image": "testing-api-repository:00000",
+            "image": "testing-api-repository",
             "resourceRequirements": null,
             "essential": true,
             "portMappings": [
@@ -14,7 +14,6 @@
                     "containerPort": "8080",
                     "protocol": "tcp"
                 }
-                
             ]
         }
     ],
@@ -22,8 +21,5 @@
     "networkMode": "awsvpc",
     "memory": "512",
     "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::878623218037:role/testing-api-execution-role",
-    "family": "testing-api-task-definition",
-    "taskRoleArn": "",
     "placementConstraints": []
 }
