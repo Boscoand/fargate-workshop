@@ -6,8 +6,6 @@ env:
 
 phases:
   install:
-    runtime-versions:
-      python: 3.8
     commands:
       # Install CDK & jq, upgrade npm
       - apt-get update
