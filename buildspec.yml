@@ -37,7 +37,7 @@ phases:
 
       # Synthesize CloudFormation templates
       - cd $CODEBUILD_SRC_DIR/infrastructure_pipeline
-      # - npm ci
+      - npm ci
       # - npm run build
       - cdk synth -o build --app 'node bin/infrastructure_pipeline.js'
 
