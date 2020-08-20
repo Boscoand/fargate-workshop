@@ -43,6 +43,6 @@ phases:
 
 artifacts:
   files:
-    - /infrastructure_pipeline/build/*
+    - infrastructure_pipeline/build/*
   discard-paths: yes
       
