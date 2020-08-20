@@ -31,7 +31,7 @@ class FargateStack extends cdk.Stack {
     })
     
     const imageRepo = ecr.Repository.fromRepositoryName(this, 'Repo', 'testing-api-repository');
-    const tag = (process.env.IMAGE_TAG) ? process.env.IMAGE_TAG : 'latest';
+    const tag = (process.env.IMAGE_TAG) ? process.env.IMAGE_TAG : '1a472afe416106e0d13b68eb0ccba1a22d68dd99';
     const image = ecs.ContainerImage.fromEcrRepository(imageRepo, tag)
 
     // Task Definition
@@ -56,7 +56,7 @@ class FargateStack extends cdk.Stack {
         executionRole,
         family: 'testing-api-task-definition',
     })
-    const container = taskDefinition.addContainer("DefaultContainer", {
+    const container = taskDefinition.addContainer("api", {
         image,
     })
     container.addPortMappings({
