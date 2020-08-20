@@ -51,8 +51,8 @@ artifacts:
     BuildArtifact:
       files:
         # - trivia-backend/infra/codedeploy-blue-green/build/appspec-prod.json
-        - trivia-backend/infra/codedeploy-blue-green/build/appspec-test.json
-        - trivia-backend/infra/codedeploy-blue-green/build/task-definition-test.json
+        - build/appspec-test.json
+        - build/task-definition-test.json
         # - trivia-backend/infra/codedeploy-blue-green/build/task-definition-prod.json
       discard-paths: yes
     ImageDetails:
