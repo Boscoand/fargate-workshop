@@ -32,7 +32,9 @@ class CodePipelineStack extends cdk.Stack {
         actionName: 'GitHubSource',
         owner: 'Boscoand',
         repo: 'fargate-workshop',
-        oauthToken: '',
+        // oauthToken: cdk.SecretValue.secretsManager('testing-api'), //'92ef4b35b5f053889d2f480b85d3cee80531b2b6',
+        oauthToken: '92ef4b35b5f053889d2f480b85d3cee80531b2b6',
+        // oauthToken: '',
         output: sourceOutput
     });
     pipeline.addStage({
